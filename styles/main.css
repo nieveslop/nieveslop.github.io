@@ -9,23 +9,26 @@
 	font-size: 24px;
 }
 .style6 {
-	font-size: 12px;
+	font-size: 14px;
 	font-style: italic;
 }
-.style7 {font-size: 12px}
+.style7 {
+	font-size: 14px;
+	color: #000000
+}
 .style10 {font-size: 24px; font-weight: bold;}
 .style13 {color: #FFFFFF}
 .style19 {
 	color: #666666;
-	font-size: 12px;
-}
-.style20 {font-size: 12px; color: #999999; }
-.style21 {
 	font-size: 14px;
+}
+.style20 {font-size: 14px; color: #999999; }
+.style21 {
+	font-size: 16px;
 }
 .style23 {font-size: 10px}
 .style24 {color: #666666}
-.style25 {color: #66FFCC; font-size: 12px; }
+.style25 {color: #66FFCC; font-size: 14px; }
 .style26 {color: #666666; }
 .style28 {
 	font-size: 14px;
@@ -54,11 +57,19 @@ a:active {
 	color: #000000;
 	font-style: italic;
 }
-.style33 {color: #FFFFFF; font-size: 10px; }
+.style33 {color: #FFFFFF; font-size: 14px; }
 .style35 {color: #003399}
 .style36 {color: #006699}
 .style37 {
 	font-size: 16px;
 	font-weight: bold;
 	font-style: italic;
+}
+.style38 {
+	font-size: 18px;
+	font-weight: bold;
+}
+.style39 {
+	font-size: 10px;
+	color: #000000
 }
