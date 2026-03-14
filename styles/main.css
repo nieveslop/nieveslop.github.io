@@ -426,12 +426,23 @@ ul {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-color);
-  transition: transform var(--transition-speed);
+  transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .summary-stat:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
+}
+
+.summary-stat.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.summary-stat.clickable.active {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px var(--secondary-color), var(--shadow-md);
+  transform: translateY(-5px);
 }
 
 .summary-stat-number {
@@ -635,55 +646,20 @@ ul {
   }
 }
 
-/* ===== Publication Tabs ===== */
-.pub-tabs {
-  display: flex;
-  gap: 0;
-  border-bottom: 2px solid var(--border-color);
-  margin-bottom: 1.5rem;
-  margin-top: 2rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.pub-tab {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  background: none;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  cursor: pointer;
-  position: relative;
-  white-space: nowrap;
-  transition: color var(--transition-speed);
-}
-
-.pub-tab:hover {
-  color: var(--text-primary);
-}
-
-.pub-tab.active {
-  color: var(--secondary-color);
-}
-
-.pub-tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--secondary-color);
-}
-
-.pub-tab-content {
+/* ===== Publication Panels (toggled by stat boxes) ===== */
+.pub-panel {
   display: none;
+  margin-top: 2rem;
+  animation: panelFadeIn 0.3s ease;
 }
 
-.pub-tab-content.active {
+.pub-panel.active {
   display: block;
+}
+
+@keyframes panelFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== Filter Pills ===== */
@@ -915,8 +891,7 @@ ul {
   .chapter-list {
     columns: 1;
   }
-  .pub-tab {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
+  .pub-panel {
+    margin-top: 1.5rem;
   }
 }
