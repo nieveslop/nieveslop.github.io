@@ -587,8 +587,51 @@ ul {
   transform: translateY(0);
 }
 
+/* LinkedIn CTA */
+.linkedin-cta {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #0A66C2;
+  color: #fff;
+  border-radius: 2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  box-shadow: var(--shadow-sm);
+}
+
+.linkedin-btn:hover {
+  background-color: #004182;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.linkedin-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
+  .card-header {
+    flex-direction: column;
+  }
+
+  .card-date {
+    color: var(--text-secondary);
+    align-self: flex-start;
+  }
+
   .hero {
     flex-direction: column-reverse;
     text-align: center;
